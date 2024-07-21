@@ -7,3 +7,4 @@ you can simply use (elapsed =end-start) where (start)
 is the start of your critical section and the (end) is the related end.
 
 
+3- the hello_MPI.cpp is the basic/simple strucure for parallelizing a typical code.
