@@ -35,6 +35,8 @@ is the start of your critical section and the (end) is the related end.
 *  MPI_Status status; // Declare the variable BEFORE the function call
 *  MPI_Recv(&recv , 1 , MPI_INT , i , 0 , MPI_COMM_WORLD , &status);
 
+**5-one_dim_Poisson.cpp** --> is a simple One Dim Gause seidel iteration method to solve Poisson Equation. the results have been compared.
+
 
 
 
