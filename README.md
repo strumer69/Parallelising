@@ -29,4 +29,12 @@ is the start of your critical section and the (end) is the related end.
 * **Note**: The messages from different processes may appear in any order, since each process runs independently.
 * MPI_Finalize() shuts down the MPI environment.
 
+**4_squre_send_receive.cpp** --> send the square of the id form each task ID (example: received 9 from Rank 3 ) 
+* MPI_STATUS_IGNORE -- > You say: "I don't care about who sent the message or how many items I received. Just give me the data."
+* if you want to have status:
+*  MPI_Status status; // Declare the variable BEFORE the function call
+*  MPI_Recv(&recv , 1 , MPI_INT , i , 0 , MPI_COMM_WORLD , &status);
+
+
+
 
