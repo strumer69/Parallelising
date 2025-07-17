@@ -9,4 +9,4 @@ is the start of your critical section and the (end) is the related end.
 
 3- the hello_MPI.cpp is the basic/simple strucure for parallelizing a typical code.
 * for compiling use the following commands:
-* compile: mpic++ 2-sum.cpp -o sum ------ Run: mpirun --oversubscribe -np 4 ./sum
+* compile: mpic++ hello_MPI.cpp -o hello ------ Run: mpirun --oversubscribe -np 4 ./hello
