@@ -7,11 +7,11 @@ you can simply use (elapsed =end-start) where (start)
 is the start of your critical section and the (end) is the related end.
 
 
-3- the hello_MPI.cpp is the basic/simple strucure for parallelizing a typical code.
+**-hello_MPI**.cpp is the basic/simple strucure for parallelizing a typical code.
 * for compiling use the following commands:
 * compile: mpic++ hello_MPI.cpp -o hello ------ Run: mpirun --oversubscribe -np 4 ./hello
 
-4- the 2-sum.cpp addsnumber from 1 to 10.
+**2-sum.cpp** addsnumber from 1 to 10.
 * to understand this part of code, simply test it once with (world_rank=0) and once with (world_rank=1). it will result in to range (1 to 5 ) and range (6 to 10)
 *   int start = (world_rank * 10 / world_size) + 1;
 *   int end = ((world_rank + 1) * 10 / world_size);
@@ -24,5 +24,9 @@ is the start of your critical section and the (end) is the related end.
 *       MPI_SUM --> this tells the operation to be done is ADD , for values comming from all processors.
 *       0 --> the rank of root process. (that will receive and process the whole results).
 *       MPI_COMM_WORLD--> communicator which defines the group of processors participated in this reduction.
-*   
+
+**3- tasks.cpp** -->  Understanding how multiple processes run in parallel.
+* **Note**: The messages from different processes may appear in any order, since each process runs independently.
+* MPI_Finalize() shuts down the MPI environment.
+
 
