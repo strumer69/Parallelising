@@ -15,3 +15,14 @@ is the start of your critical section and the (end) is the related end.
 * to understand this part of code, simply test it once with (world_rank=0) and once with (world_rank=1). it will result in to range (1 to 5 ) and range (6 to 10)
 *   int start = (world_rank * 10 / world_size) + 1;
 *   int end = ((world_rank + 1) * 10 / world_size);
+
+*   and the following line :
+*       MPI_Reduce(&partial_sum, &total_sum, 1, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
+*       partial_sum--> is the value, each proc wants to send (local result)
+*       total_sum --> where the final result will be stored. (only valid on the root process)
+*       1 -- > the number of elements to be send--> integr in this case (as next argument is MPI_INT)
+*       MPI_SUM --> this tells the operation to be done is ADD , for values comming from all processors.
+*       0 --> the rank of root process. (that will receive and process the whole results).
+*       MPI_COMM_WORLD--> communicator which defines the group of processors participated in this reduction.
+*   
+
