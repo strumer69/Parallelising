@@ -25,6 +25,13 @@ is the start of your critical section and the (end) is the related end.
 *       0 --> the rank of root process. (that will receive and process the whole results).
 *       MPI_COMM_WORLD--> communicator which defines the group of processors participated in this reduction.
 
+* also you can compile with profiling flag:-->  mpic++ -pg 2-sum.cpp -o sum --> then run: mpirun -np 4 ./sum
+ --> After each run, gmon.out is generated per process. --> use it: --> gprof ./sum gmon.out > analysis.txt
+
+
+
+
+
 **3- tasks.cpp** -->  Understanding how multiple processes run in parallel.
 * **Note**: The messages from different processes may appear in any order, since each process runs independently.
 * MPI_Finalize() shuts down the MPI environment.
